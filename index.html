@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Thuỳ Dương 💗</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(135deg, #180b29, #5b174c, #bd397b);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.heart {
+    font-size: 125px;
+    animation: heartbeat 1s infinite;
+    filter: drop-shadow(0 0 25px #ff69b4);
+}
+
+h1 {
+    color: #ffb6dc;
+    font-size: 30px;
+    margin-top: 25px;
+    text-shadow: 0 0 15px #ff69b4;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.love {
+    margin-top: 35px;
+    color: #ffd6ec;
+    font-size: 17px;
+    padding: 0 15px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+.floating {
+    position: absolute;
+    bottom: -30px;
+    color: #ff8fc7;
+    animation: fly 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fly {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+<div class="heart">💗</div>
+<h1>THUỲ DƯƠNG</h1>
+<p>I LOVE YOU FOREVER!</p>
+<div class="love">Gửi đến em tất cả những điều ngọt ngào nhất 💗</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHeart, 350);
+</script>
+</body>
+</html>
